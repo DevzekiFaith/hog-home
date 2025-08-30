@@ -1,3 +1,65 @@
+/* Utility class to remove border radius */
+.no-radius {
+  border-radius: 0 !important;
+}
+/* Morphism card style */
+/* Glassmorphism card style */
+/* Glassmorphism card style with improved text clarity */
+/* Removed invalid root-level properties. All card styles are inside .morphism-card selector below. */
+.morphism-card {
+  background: rgba(30, 30, 30, 0.22);
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2rem;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s,
+    background 0.3s;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+/* Removed extra closing brace */
+.morphism-card * {
+  color: #f5f5f5 !important;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+.morphism-card .text-blue-600 {
+  color: #0070f3 !important;
+  font-weight: 600;
+}
+.morphism-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Fade-in animation */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+.animate-delay-1 {
+  animation-delay: 0.1s;
+}
+.animate-delay-2 {
+  animation-delay: 0.2s;
+}
+.animate-delay-3 {
+  animation-delay: 0.3s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 @import "tailwindcss";
 
 :root {
@@ -5,12 +67,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed non-standard @theme inline rule */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,5 +79,151 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--background);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1.5px 4px rgba(0, 0, 0, 0.03);
+  border-radius: 24px;
+  margin: 1rem auto;
+  max-width: 900px;
+}
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-list li a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.nav-list li a:hover {
+  background: #f0f0f0;
+  color: #0070f3;
+}
+.social-media a {
+  margin-left: 1rem;
+  color: #0070f3;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.social-media a:hover {
+  color: #0051a8;
+}
+
+main {
+  background: var(--background);
+  border-radius: 32px;
+  box-shadow:
+    8px 8px 24px #e0e0e0,
+    -8px -8px 24px #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  transition: transform 0.2s;
+}
+img:hover {
+  transform: scale(1.03);
+  box-shadow:
+    8px 8px 32px #d1d1d1,
+    -8px -8px 32px #f9f9f9;
+}
+
+.modal-toggle {
+  background: var(--background);
+  border: none;
+  box-shadow:
+    2px 2px 8px #e0e0e0,
+    -2px -2px 8px #ffffff;
+  border-radius: 50%;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.modal-toggle:active {
+  box-shadow:
+    1px 1px 4px #d1d1d1,
+    -1px -1px 4px #f9f9f9;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: var(--background);
+  border-radius: 32px;
+  box-shadow:
+    8px 8px 24px #e0e0e0,
+    -8px -8px 24px #ffffff;
+  padding: 2rem;
+  min-width: 250px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.close-modal {
+  margin-top: 1rem;
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.close-modal:hover {
+  background: #0051a8;
+}
+
+footer {
+  background: var(--background);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 2rem auto 1rem auto;
+  max-width: 900px;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1rem;
 }

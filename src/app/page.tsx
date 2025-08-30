@@ -1,102 +1,79 @@
-import Image from "next/image";
 
-export default function Home() {
+import Navbar from "../components/Navbar";
+import MobileModal from "../components/MobileModal";
+import HeroPage from "@/components/Hero/HeroPage";
+import Link from "next/link";
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="font-sans min-h-screen flex flex-col">
+      {/* Mobile Modal for navigation */}
+      <div className="md:hidden">
+        <MobileModal>
+          <Navbar />
+        </MobileModal>
+      </div>
+      {/* Desktop Navbar */}
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
+      <div>
+        <HeroPage />
+      </div>
+  <main className="flex-1 flex flex-col items-center justify-center p-8 no-radius">
+        <div className="flex justify-between w-full max-w-4xl mb-4">
+          <Link href="/contact" className="flex items-center gap-2 text-blue-600 hover:underline">
+            <span className="text-2xl">&#8592;</span> Contact
+          </Link>
+          <Link href="/about" className="flex items-center gap-2 text-blue-600 hover:underline">
+            About <span className="text-2xl">&#8594;</span>
+          </Link>
+        </div>
+        <h1 className="text-4xl font-bold mb-4 text-center">Welcome to House of Gideon</h1>
+        <p className="text-lg mb-8 text-center">Empowering lives, transforming communities.</p>
+        <img src="/IMG-20250827-WA0008.jpg" alt="Church" className="rounded-lg shadow-lg w-full max-w-md mb-8" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+          <Link href="/about" className="morphism-card animate-fade-in hover:scale-105 transition-transform duration-200 group">
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/IMG-20250827-WA0009.jpg" alt="About Icon" className="w-10 h-10 rounded-full shadow" />
+              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600">About Us</h2>
+            </div>
+            <p className="text-gray-600 mb-2">Learn more about our church, mission, and values.</p>
+            <span className="text-blue-500 font-medium group-hover:underline">Read More →</span>
+          </Link>
+          <Link href="/events" className="morphism-card animate-fade-in animate-delay-1 hover:scale-105 transition-transform duration-200 group">
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/IMG-20250827-WA0011.jpg" alt="Events Icon" className="w-10 h-10 rounded-full shadow" />
+              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600">Events</h2>
+            </div>
+            <p className="text-gray-600 mb-2">Stay updated with our upcoming events and programs.</p>
+            <span className="text-blue-500 font-medium group-hover:underline">See Events →</span>
+          </Link>
+          <Link href="/ministry" className="morphism-card animate-fade-in animate-delay-2 hover:scale-105 transition-transform duration-200 group">
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/IMG-20250827-WA0015.jpg" alt="Ministry Icon" className="w-10 h-10 rounded-full shadow" />
+              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600">Ministry</h2>
+            </div>
+            <p className="text-gray-600 mb-2">Discover our ministry, vision, and impact.</p>
+            <span className="text-blue-500 font-medium group-hover:underline">Explore Ministry →</span>
+          </Link>
+          <Link href="/contact" className="morphism-card animate-fade-in animate-delay-3 hover:scale-105 transition-transform duration-200 group">
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/IMG-20250827-WA0014.jpg" alt="Contact Icon" className="w-10 h-10 rounded-full shadow" />
+              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600">Contact</h2>
+            </div>
+            <p className="text-gray-600 mb-2">Get in touch with House of Gideon.</p>
+            <span className="text-blue-500 font-medium group-hover:underline">Contact Us →</span>
+          </Link>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="bg-gray-100 py-4 text-center">
+        <div className="flex justify-center gap-4">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+        <p className="mt-2">&copy; {new Date().getFullYear()} House of Gideon. All rights reserved.</p>
       </footer>
     </div>
   );
