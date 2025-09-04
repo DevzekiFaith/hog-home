@@ -7,6 +7,7 @@ import HeroPage from "@/components/Hero/HeroPage";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -238,14 +239,7 @@ export default function HomePage() {
           </Link>
         </div>
       </main>
-      <footer className="bg-gray-100 py-4 text-center">
-        <div className="flex justify-center gap-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        </div>
-        <p className="mt-2">&copy; {new Date().getFullYear()} House of Gideon. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
