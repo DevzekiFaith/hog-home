@@ -16,7 +16,7 @@ export default function HomePage() {
   // Hero section images
   const heroImages = [
     "/IMG-20250827-WA0008.jpg",
-    "/IMG-20250827-WA0009.jpg", 
+    "/IMG-20250827-WA0009.jpg",
     "/IMG-20250827-WA0010.jpg",
     "/IMG-20250827-WA0011.jpg"
   ];
@@ -47,17 +47,15 @@ export default function HomePage() {
 
   return (
     <div className="font-sans min-h-screen flex flex-col">
-      {/* Mobile Modal for navigation */}
+      {/* Mobile Navigation */}
       <div className="md:hidden">
-        <MobileModal>
-          <Navbar />
-        </MobileModal>
+        <MobileModal />
       </div>
       {/* Desktop Navbar */}
       <div className="hidden md:block">
         <Navbar />
       </div>
-      
+
       {/* Enhanced Hero Section with Image Slider */}
       <section className="relative h-screen overflow-hidden">
         {/* Image Slider Background */}
@@ -65,9 +63,8 @@ export default function HomePage() {
           {heroImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               <Image
                 src={image}
@@ -97,11 +94,11 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-              Join us in a journey of faith, purpose, and community transformation. 
+              Join us in a journey of faith, purpose, and community transformation.
               Discover your calling and make a lasting impact for Christ.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/about" className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:transform hover:-translate-y-1">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-22">
+              <Link href="/about" className="px-4 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:transform hover:-translate-y-1">
                 Learn More About Us
               </Link>
               <Link href="/events" className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:transform hover:-translate-y-1">
@@ -117,9 +114,8 @@ export default function HomePage() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-white' : 'bg-white/50'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white' : 'bg-white/50'
+                }`}
             />
           ))}
         </div>
@@ -159,16 +155,15 @@ export default function HomePage() {
           <p className="text-xl mb-8 text-center max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             A vibrant faith community where lives are transformed, leaders are raised, and communities flourish through the power of Christ.
           </p>
-          
+
           {/* Image Slider Container */}
           <div className="relative w-full max-w-4xl mx-auto mb-8">
             <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
               {welcomeImages.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-all duration-1000 ${
-                    index === welcomeSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                  }`}
+                  className={`absolute inset-0 transition-all duration-1000 ${index === welcomeSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                    }`}
                 >
                   <Image
                     src={image}
@@ -179,7 +174,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
               ))}
-              
+
               {/* Overlay Content */}
               <div className="absolute bottom-6 left-6 right-6 text-white z-10">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">Our Community</h3>
@@ -193,11 +188,10 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => setWelcomeSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === welcomeSlide 
-                      ? 'bg-teal-500 scale-125' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === welcomeSlide
+                      ? 'bg-teal-500 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                    }`}
                 />
               ))}
             </div>

@@ -411,7 +411,7 @@ export default function EventsPage() {
                 </svg>
               </a>
             </div>
-            <p className="text-sm text-gray-500">© {new Date().getFullYear()} House of God Church. All rights reserved.</p>
+            <p className="text-sm text-gray-500">© {new Date().getFullYear()} Yonan Technologies. All rights reserved.</p>
           </div>
         </div>
       </footer>

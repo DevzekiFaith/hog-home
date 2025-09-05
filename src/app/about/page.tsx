@@ -11,11 +11,9 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--primary-bg)' }}>
-      {/* Mobile Modal for navigation */}
+      {/* Mobile Navigation */}
       <div className="md:hidden">
-        <MobileModal>
-          <Navbar />
-        </MobileModal>
+        <MobileModal />
       </div>
       {/* Desktop Navbar */}
       <div className="hidden md:block">
