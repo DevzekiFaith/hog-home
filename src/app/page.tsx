@@ -49,7 +49,9 @@ export default function HomePage() {
     <div className="font-sans min-h-screen flex flex-col">
       {/* Mobile Navigation */}
       <div className="md:hidden">
-        <MobileModal />
+        <MobileModal>
+          <Navbar />
+        </MobileModal>
       </div>
       {/* Desktop Navbar */}
       <div className="hidden md:block">

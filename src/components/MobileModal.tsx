@@ -18,7 +18,11 @@ const navigation: NavItem[] = [
   { name: 'Contact', href: '/contact' },
 ];
 
-export default function MobileModal() {
+interface MobileModalProps {
+  children: React.ReactNode;
+}
+
+export default function MobileModal({ children }: MobileModalProps) {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

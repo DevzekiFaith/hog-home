@@ -13,7 +13,9 @@ export default function AboutPage() {
     <div className="min-h-screen" style={{ background: 'var(--primary-bg)' }}>
       {/* Mobile Navigation */}
       <div className="md:hidden">
-        <MobileModal />
+        <MobileModal>
+          <Navbar />
+        </MobileModal>
       </div>
       {/* Desktop Navbar */}
       <div className="hidden md:block">
@@ -34,7 +36,7 @@ export default function AboutPage() {
                 About House of Gideon
               </h1>
               <p className="text-2xl md:text-3xl mb-10 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                A vibrant faith community dedicated to empowering lives, transforming communities, 
+                A vibrant faith community dedicated to empowering lives, transforming communities,
                 and raising leaders who will impact their world for Christ through purpose-driven ministry.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center xl:justify-start mb-8">
@@ -48,7 +50,7 @@ export default function AboutPage() {
                   Our Impact
                 </Link>
               </div>
-              
+
               {/* Ministry Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -69,14 +71,14 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex-1 max-w-2xl">
               <div className="relative">
                 <div className="neumorphic-card p-0 overflow-hidden animate-fade-in">
-                  <Image 
-                    src="/IMG-20250827-WA0009.jpg" 
-                    alt="House of Gideon Community" 
-                    width={800} 
+                  <Image
+                    src="/IMG-20250827-WA0009.jpg"
+                    alt="House of Gideon Community"
+                    width={800}
                     height={600}
                     className="w-full h-96 object-cover"
                   />
@@ -86,13 +88,13 @@ export default function AboutPage() {
                     <p className="text-lg opacity-90">United in faith, purpose, and love</p>
                   </div>
                 </div>
-                
+
                 {/* Floating Highlights */}
                 <div className="absolute -bottom-8 -right-8 grid grid-cols-2 gap-4">
                   <div className="neumorphic-card p-4 text-center animate-fade-in animate-delay-1">
                     <div className="w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" style={{ color: 'var(--accent-teal)' }}>
-                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" strokeWidth="1.5" />
                       </svg>
                     </div>
                     <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>Community</div>
@@ -100,7 +102,7 @@ export default function AboutPage() {
                   <div className="neumorphic-card p-4 text-center animate-fade-in animate-delay-2">
                     <div className="w-8 h-8 mx-auto mb-2 flex items-center justify-center">
                       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" style={{ color: 'var(--accent-teal)' }}>
-                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" strokeWidth="1.5" />
                       </svg>
                     </div>
                     <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>Love</div>
@@ -116,7 +118,7 @@ export default function AboutPage() {
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gradient">Our Foundation</h2>
             <p className="text-2xl max-w-4xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Built on unwavering faith, guided by divine purpose, and driven by transformational love - 
+              Built on unwavering faith, guided by divine purpose, and driven by transformational love -
               these are the pillars that define House of Gideon.
             </p>
           </div>
@@ -128,8 +130,8 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Foundation</h3>
                 <div className="space-y-4">
                   {[
-                    { 
-                      id: "mission", 
+                    {
+                      id: "mission",
                       label: "Our Mission",
                       icon: (
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,8 +139,8 @@ export default function AboutPage() {
                         </svg>
                       )
                     },
-                    { 
-                      id: "vision", 
+                    {
+                      id: "vision",
                       label: "Our Vision",
                       icon: (
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,8 +149,8 @@ export default function AboutPage() {
                         </svg>
                       )
                     },
-                    { 
-                      id: "values", 
+                    {
+                      id: "values",
                       label: "Core Values",
                       icon: (
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,8 +158,8 @@ export default function AboutPage() {
                         </svg>
                       )
                     },
-                    { 
-                      id: "beliefs", 
+                    {
+                      id: "beliefs",
                       label: "Our Beliefs",
                       icon: (
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,11 +171,10 @@ export default function AboutPage() {
                     <button
                       key={item.id}
                       onClick={() => setActiveSection(item.id)}
-                      className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
-                        activeSection === item.id 
-                          ? 'bg-gradient-to-r from-teal-100 to-teal-50 border-l-4 border-teal-500' 
+                      className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${activeSection === item.id
+                          ? 'bg-gradient-to-r from-teal-100 to-teal-50 border-l-4 border-teal-500'
                           : 'hover:bg-gray-50 hover:text-black'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-current" style={{ width: '24px', height: '24px' }}>{item.icon}</span>
@@ -193,19 +194,19 @@ export default function AboutPage() {
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 flex items-center justify-center rounded-full" style={{ background: 'var(--accent-teal)', color: 'white' }}>
                         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="1.5"/>
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       </div>
                       <h3 className="text-3xl font-bold text-gradient">Our Mission</h3>
                     </div>
                     <div className="space-y-6">
                       <blockquote className="text-2xl italic font-medium mb-6" style={{ color: 'var(--text-primary)' }}>
-                        "To empower lives, transform communities, and raise leaders who will impact their world for Christ 
+                        "To empower lives, transform communities, and raise leaders who will impact their world for Christ
                         through faith-centered worship, purposeful discipleship, and compassionate service."
                       </blockquote>
                       <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                        At House of Gideon, our mission extends beyond traditional church boundaries. We are committed to 
-                        creating an environment where every individual discovers their God-given purpose, develops their 
+                        At House of Gideon, our mission extends beyond traditional church boundaries. We are committed to
+                        creating an environment where every individual discovers their God-given purpose, develops their
                         unique gifts, and becomes equipped to make a lasting impact in their communities and beyond.
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -231,20 +232,20 @@ export default function AboutPage() {
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 flex items-center justify-center rounded-full" style={{ background: 'var(--accent-teal-light)', color: 'white' }}>
                         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-                          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="1.5"/>
-                          <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" strokeWidth="1.5"/>
+                          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="1.5" />
+                          <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       </div>
                       <h3 className="text-3xl font-bold text-gradient">Our Vision</h3>
                     </div>
                     <div className="space-y-6">
                       <blockquote className="text-2xl italic font-medium mb-6" style={{ color: 'var(--text-primary)' }}>
-                        "To be a beacon of hope and transformation, establishing thriving faith communities across nations 
+                        "To be a beacon of hope and transformation, establishing thriving faith communities across nations
                         where every person discovers their divine purpose and lives it out with passion and excellence."
                       </blockquote>
                       <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                        Our vision encompasses a future where House of Gideon serves as a catalyst for spiritual awakening 
-                        and social transformation. We envision communities where faith is not just practiced but lived out 
+                        Our vision encompasses a future where House of Gideon serves as a catalyst for spiritual awakening
+                        and social transformation. We envision communities where faith is not just practiced but lived out
                         in practical ways that bring healing, hope, and positive change to society.
                       </p>
                       <div className="space-y-4">
@@ -285,14 +286,14 @@ export default function AboutPage() {
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 flex items-center justify-center rounded-full" style={{ background: 'var(--accent-teal-dark)', color: 'white' }}>
                         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-                          <path d="M12 2l2.09 6.26L20 10l-4.91 4.87L16.18 21 12 18.27 7.82 21l1.09-6.13L4 10l5.91-1.74L12 2z" stroke="currentColor" strokeWidth="1.5"/>
+                          <path d="M12 2l2.09 6.26L20 10l-4.91 4.87L16.18 21 12 18.27 7.82 21l1.09-6.13L4 10l5.91-1.74L12 2z" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       </div>
                       <h3 className="text-3xl font-bold text-gradient">Core Values</h3>
                     </div>
                     <div className="space-y-6">
                       <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                        Our core values serve as the foundation for everything we do, guiding our decisions, 
+                        Our core values serve as the foundation for everything we do, guiding our decisions,
                         shaping our character, and defining our approach to ministry and community engagement.
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -322,14 +323,14 @@ export default function AboutPage() {
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 flex items-center justify-center rounded-full" style={{ background: 'var(--accent-teal)', color: 'white' }}>
                         <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-                          <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" strokeWidth="1.5"/>
+                          <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       </div>
                       <h3 className="text-3xl font-bold text-gradient">Our Beliefs</h3>
                     </div>
                     <div className="space-y-6">
                       <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                        Our beliefs are rooted in biblical truth and form the theological foundation upon which 
+                        Our beliefs are rooted in biblical truth and form the theological foundation upon which
                         our ministry is built. These convictions guide our teaching, worship, and community life.
                       </p>
                       <div className="space-y-4">
@@ -344,7 +345,7 @@ export default function AboutPage() {
                           <div key={index} className="flex items-start gap-4 p-4 rounded-lg" style={{ background: 'rgba(184, 212, 209, 0.1)' }}>
                             <div className="w-6 h-6 flex items-center justify-center rounded-full mt-1" style={{ background: 'var(--accent-teal)', color: 'white' }}>
                               <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-                                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
                             </div>
                             <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>{belief}</p>
@@ -364,7 +365,7 @@ export default function AboutPage() {
           <div className="neumorphic-card text-center animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Join Our Community</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-              Experience the transformational power of faith, community, and purpose. 
+              Experience the transformational power of faith, community, and purpose.
               Discover your calling and make a lasting impact with House of Gideon.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
